@@ -46,7 +46,7 @@ const login = () => {
   proxy.$refs.ruleFormRef.validate((valid) => {
     if(valid) {
       // send request to backend, promise
-      request.post('/user/login/', user).then(res => {
+      request.post('/user/login', user).then(res => {
         if (res.code === '200') {
           ElNotification({
             type: 'success',
