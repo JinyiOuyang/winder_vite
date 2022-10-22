@@ -65,7 +65,7 @@ const register = () => {
           request.get("/user/username/"+user.username).then(res => {
             localStorage.setItem('userid', res.id)
             localStorage.setItem('username', res.username)
-            router.push('/')
+            router.push('/sport')
           })
         } else {
           ElNotification({
