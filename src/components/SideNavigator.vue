@@ -1,7 +1,7 @@
 <template>
   <el-scrollbar>
     <el-menu :default-openeds="['2', '3']" router>
-      <el-menu-item index="/" >
+      <el-menu-item index="/sport" >
         <template #title>
           <el-icon><house /></el-icon>Home
         </template>
