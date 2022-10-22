@@ -22,7 +22,7 @@ const routes = [
         component: () => import('../views/SetPassword.vue')
       },
       {
-        path: '/matchmate',
+        path: '/matchmate11',
         name: 'MatchMate',
         component: () => import('../views/MatchMate.vue')
       },
