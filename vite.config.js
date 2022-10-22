@@ -10,5 +10,5 @@ export default defineConfig({
   build: {
     chunkSizeWarningLimit: 1500,
   },
-  base: env.VITE_MODE === 'production' ? './' : '/',
+  base: process.env.NODE_ENV === 'production' ? './' : '/',
   })
