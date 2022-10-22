@@ -9,12 +9,12 @@ const routes = [
       {
         path: '',
         name: 'sport',
-        component: () => import('../views/Home.vue')
+        component: () => import('../views/Sport.vue')
       },
       {
         path: '/sport',
         name: 'Home',
-        component: () => import('../views/Home.vue')
+        component: () => import('../views/Sport.vue')
       },
       {
         path: '/profileedit',
