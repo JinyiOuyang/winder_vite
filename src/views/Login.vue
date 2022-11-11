@@ -55,7 +55,8 @@ const login = () => {
           request.get("/user/username/"+user.username).then(res => {
             localStorage.setItem('userid', res.id)
             localStorage.setItem('username', res.username)
-            router.push('/sport')
+            router.push('/')
+            location.reload()
           })
         } else {
           ElNotification({
@@ -78,7 +79,7 @@ const register = () =>{
 }
 
 if(localStorage.getItem("username")!=null){
-  router.push('/login')
+  router.push('/')
 }
 </script>
 

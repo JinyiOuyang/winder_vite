@@ -1,4 +1,4 @@
-import {createRouter, createWebHashHistory, createWebHistory} from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
   {
@@ -8,13 +8,8 @@ const routes = [
     children:[
       {
         path: '',
-        name: 'sport',
-        component: () => import('../views/Sport.vue')
-      },
-      {
-        path: '/sport',
         name: 'Home',
-        component: () => import('../views/Sport.vue')
+        component: () => import('../views/Home.vue')
       },
       {
         path: '/profileedit',
@@ -27,14 +22,24 @@ const routes = [
         component: () => import('../views/SetPassword.vue')
       },
       {
-        path: '/matchmate',
-        name: 'MatchMate',
-        component: () => import('../views/MatchMate.vue')
+        path: '/findmate',
+        name: 'FindMate',
+        component: () => import('../views/FindMate.vue')
       },
       {
         path: '/yourmate',
         name: 'YourMate',
         component: () => import('../views/YourMate.vue')
+      },
+      {
+        path: '/youlike',
+        name: 'YouLike',
+        component: () => import('../views/YouLike.vue')
+      },
+      {
+        path: 'likeyou',
+        name: 'LikeYou',
+        component: () => import('../views/LikeYou.vue')
       },
       {
         path: '/messagesent',
@@ -81,7 +86,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHashHistory("/"),
+  history: createWebHistory("/"),
   routes: routes,
 })
 

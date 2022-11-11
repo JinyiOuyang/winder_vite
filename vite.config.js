@@ -6,8 +6,5 @@ export default defineConfig({
   plugins: [vue()],
   server: {
     port: 8080
-  },
-  build: {
-    chunkSizeWarningLimit: 1500,
-  },
-  })
+  }
+})
