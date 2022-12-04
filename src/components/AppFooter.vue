@@ -5,34 +5,34 @@
       2022 Winder
     </section>
     <section class="links">
-      <p class="link-text">About Us</p>
+      <router-link to="/" class="link-text">About Us</router-link>
       |
-      <p to="/" class="link-text">Contact Us</p>
+      <router-link to="/" class="link-text">Contact Us</router-link>
       |
-      <p class="link-text">Directions</p>
+      <router-link to="/" class="link-text">Directions</router-link>
     </section>
     <section class="social-media-icons">
       Follow Us&nbsp;
-      <p
+      <router-link to="/"
       >
         <font-awesome-icon
             icon="fa-brands fa-square-twitter"
             size="lg"
         />
-      <p
+      </router-link
       >&nbsp;
-      <p
+      <router-link to="/"
       >
         <font-awesome-icon
             icon="fa-brands fa-square-facebook"
             size="lg"
         />
-      <p
+      </router-link
       >&nbsp;
-      <p
+      <router-link to="/"
       >
         <font-awesome-icon icon="fa-brands fa-square-instagram" size="lg"/>
-      <p>
+      </router-link>
     </section>
   </footer>
 </template>
