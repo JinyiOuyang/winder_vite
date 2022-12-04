@@ -21,9 +21,7 @@ export default {
   methods: {
     setLink(link) {
       localStorage.setItem('link', link)
-      console.log(localStorage.getItem("link"))
-      console.log(window.location.href)
-      // window.location.reload()
+      location.reload()
 
 
     }

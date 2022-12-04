@@ -46,59 +46,7 @@ import {reactive, ref} from "vue";
 const link = ref(localStorage.getItem("link"))
 </script>
 
-<script>
-export default {
-  name: "SideNavigator",
-  data() {
-    return {
-      link: localStorage.getItem('link')
-    }
-  },
-  watch: {
-    // menu(){ return localStorage.getItem('link')}
-    $route(to,from){
-      console.log('watch')
-      if(window.location.href.endsWith('/mywinder')){
-        this.link = 'account'
-      }
-      else if(window.location.href.endsWith('/findevent')){
-        this.link = 'event'
-      }
-      else if(window.location.href.endsWith('/findmate')){
-        this.link = 'partner'
-      }
-    }
-  },
-  computed: {
-    // menuShow(link){
-    //   console.log("fuck")
-    //   return link == localStorage.getItem("link")
-    // }
-    // menu(){
-    //   // if(window.location.href.endsWith('/mywinder')){
-    //   //   return 'account'
-    //   // }
-    //   // else if(window.location.href.endsWith('/findevent')){
-    //   //   return'event'
-    //   // }
-    //   // else if(window.location.href.endsWith('/findmate')){
-    //   //   return 'partner'
-    //   return this.link
-    //   // }
-    // },
-  },
-  methods: {
 
-    // menuShow(link) {
-    //   if(link === localStorage.getItem("link") ){
-    //     return true;
-    //   }
-    //   return false;
-    // }
-  }
-}
-
-</script>
 
 
 <style>
