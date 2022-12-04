@@ -171,6 +171,11 @@ const find = () => {
 //     })
 //   })
 // }
+
+if (localStorage.getItem('link')!='event'){
+  localStorage.setItem('link', 'event')
+  location.reload()
+}
 </script>
 
 <style scoped>

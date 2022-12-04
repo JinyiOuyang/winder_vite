@@ -174,6 +174,11 @@ const match = () => {
 //
 //   // window.addEventListener("scroll", this.handleScroll);
 // })
+
+if (localStorage.getItem('link')!='partner'){
+  localStorage.setItem('link', 'partner')
+  location.reload()
+}
 </script>
 
 

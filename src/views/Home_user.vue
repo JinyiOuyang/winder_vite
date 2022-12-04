@@ -154,8 +154,14 @@ const add = () => {
       }
     })
   })
+
+
 }
 
+if (localStorage.getItem('link')!='account'){
+  localStorage.setItem('link', 'account')
+  location.reload()
+}
 </script>
 
 <style scoped>
