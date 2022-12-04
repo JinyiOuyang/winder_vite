@@ -14,6 +14,7 @@
 
 <script>
 import Header from "./Header.vue";
+import router from "../router/index.js";
 
 export default {
   name: "HeaderNavigator",
@@ -21,9 +22,15 @@ export default {
   methods: {
     setLink(link) {
       localStorage.setItem('link', link)
-      location.reload()
-
-
+      if (localStorage.getItem('link')=="account"){
+        router.push("/mywinder")
+      }
+      else if (localStorage.getItem('link')=="partner"){
+        router.push("/findmate")
+      }
+      else if (localStorage.getItem('link')=="event"){
+        router.push("/findevent")
+      }
     }
   }
 }
