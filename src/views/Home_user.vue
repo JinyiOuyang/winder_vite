@@ -154,8 +154,6 @@ const add = () => {
       }
     })
   })
-
-
 }
 
 if (localStorage.getItem('link')!='account'){
