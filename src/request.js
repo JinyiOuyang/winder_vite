@@ -2,7 +2,7 @@ import axios from 'axios'
 import {ElNotification} from "element-plus";
 
 const request = axios.create({
-    baseURL: 'http://Winderspringboot-env.eba-tbnygysj.us-east-2.elasticbeanstalk.com ',
+    baseURL: 'http://winderspringboot-env.eba-tbnygysj.us-east-2.elasticbeanstalk.com/',
     timeout: 5000
 })
 
