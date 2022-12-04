@@ -1,12 +1,12 @@
 <template>
   <div class="navigator-login">
-      <div class="navigator">
+    <div class="navigator">
       <p class="nav-link"  v-if="user == null">Home</p>
-        <p class="nav-link"  v-if="user != null" @click="setLink('account')">My Winder</p>
-        <p class="nav-link"  v-if="user != null" @click="setLink('partner')"> | Workout Partner</p>
-        <p class="nav-link"  v-if="user != null" @click="setLink('event')"> | Group Activity</p>
-      </div>
+      <p class="nav-link"  v-if="user != null" @click="setLink('account')">My Winder</p>
+      <p class="nav-link"  v-if="user != null" @click="setLink('partner')"> | Workout Partner</p>
+      <p class="nav-link"  v-if="user != null" @click="setLink('event')"> | Group Activity</p>
     </div>
+  </div>
   <div class="login">
     <Header></Header>
   </div>
@@ -46,9 +46,8 @@ const user = ref(localStorage.getItem("userid"))
 
 <style scoped>
 .navigator-login {
-  font-size: 28px;
-  font-weight: bold;
-  font-family: Monda;
+  font-size: 24px;
+  font-family: Arial;
 }
 
 .navigator{
@@ -61,7 +60,8 @@ const user = ref(localStorage.getItem("userid"))
   text-decoration: none;
 }
 .nav-link:hover {
-  text-decoration: underline 2px black;
+  text-decoration: underline 2px whitesmoke;
+  cursor: pointer;
 }
 
 .login{

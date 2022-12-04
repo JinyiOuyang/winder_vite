@@ -1,28 +1,28 @@
 <template>
   <div style="margin-bottom: 20px">
     <el-date-picker style="width: 200px; margin: 10px"
-        v-model="date_from"
-        type="date"
-        placeholder="Date from"
+                    v-model="date_from"
+                    type="date"
+                    placeholder="Date from"
     />
     <el-date-picker style="width: 200px; margin: 10px"
-        v-model="date_to"
-        type="date"
-        placeholder="Date to"
+                    v-model="date_to"
+                    type="date"
+                    placeholder="Date to"
     />
     <el-time-select style="width: 200px; margin: 10px"
-        v-model="time_from"
-        start="06:00"
-        step="00:30"
-        end="21:00"
-        placeholder="Time from"
+                    v-model="time_from"
+                    start="06:00"
+                    step="00:30"
+                    end="21:00"
+                    placeholder="Time from"
     />
     <el-time-select style="width: 200px; margin: 10px"
-        v-model="time_to"
-        start="06:00"
-        step="00:30"
-        end="21:00"
-        placeholder="Time to"
+                    v-model="time_to"
+                    start="06:00"
+                    step="00:30"
+                    end="21:00"
+                    placeholder="Time to"
     />
     <el-select style="width: 200px; margin: 10px" v-model="sportid" placeholder="Sport" clearable label="Sport">
       <el-option v-for="item in state.sport_options" :label="item.sportname" :value="item.id"/>
@@ -35,21 +35,6 @@
     </el-select>
     <el-button style="margin: 10px; width: 200px; float: right" type="primary" @click="find"  round :disabled="buttonEnable"><el-icon style="margin-right: 3px"><Search /></el-icon> Find</el-button>
   </div>
-
-<!--  <el-table :data="state.tableData" stripe>-->
-<!--    <el-table-column prop="id" label="id"></el-table-column>-->
-<!--    <el-table-column prop="name" label="name"></el-table-column>-->
-<!--    <el-table-column prop="date" label="date" :formatter="formatDate"></el-table-column>-->
-<!--    <el-table-column prop="time" label="time"></el-table-column>-->
-
-<!--    <el-table-column label="Operations">-->
-<!--      <template #default="scope">-->
-<!--        <el-button text @click="add(scope.$index)"-->
-<!--        >Add</el-button-->
-<!--        >-->
-<!--      </template>-->
-<!--    </el-table-column>-->
-<!--  </el-table>-->
   <div class="main-user-info">
     <PostGroup v-for="(anime, i) in state.anime_list" :key="i" :anime="anime"/>
   </div>
@@ -64,7 +49,7 @@ import {ElNotification} from "element-plus";
 import PostGroup from "./PostGroup.vue";
 
 const sportid = ref(localStorage.getItem('findevent_sportid')?parseInt(localStorage.getItem('findevent_sportid')):"")
-const date_from = ref(localStorage.getItem('findevent_sportid')?localStorage.getItem('findevent_sportid'):"")
+const date_from = ref(localStorage.getItem('findevent_date_from')?localStorage.getItem('findevent_date_from'):"")
 const date_to = ref(localStorage.getItem('findevent_date_to')?localStorage.getItem('findevent_date_to'):"")
 const time_from = ref(localStorage.getItem('findevent_time_from')?localStorage.getItem('findevent_time_from'):"")
 const time_to = ref(localStorage.getItem('findevent_time_to')?localStorage.getItem('findevent_time_to'):"")
@@ -146,34 +131,6 @@ const find = () => {
       })
 }
 
-
-// const add = (index) => {
-//   request.get('/event/'+state.tableData[index].id).then(res => {
-//     let event = res
-//
-//     if(event.participantid.length>0) {
-//       event.participantid += ","
-//       event.participantid += localStorage.getItem("userid")
-//     }else{
-//       event.participantid += localStorage.getItem("userid")
-//     }
-//
-//     request.post('/event/update', event).then(res => {
-//       if (res.code === '200') {
-//         ElNotification({
-//           type: 'success',
-//           message: 'Join Success'
-//         })
-//         find()
-//       } else {
-//         ElNotification({
-//           type: 'error',
-//           message: res.msg
-//         })
-//       }
-//     })
-//   })
-// }
 
 if (localStorage.getItem('link')!='event'){
   localStorage.setItem('link', 'event')
