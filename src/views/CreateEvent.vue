@@ -7,24 +7,24 @@
           <el-input v-model="event.name" placeholder="Event Name"/>
         </el-form-item>
         <el-form-item prop="sport">
-          <el-select v-model="event.sportid" placeholder="Sport" clearable label="Sport">
+          <el-select style="width: 200px" v-model="event.sportid" placeholder="Sport" clearable label="Sport">
             <el-option v-for="item in rules.sport_options" :label="item.sportname" :value="item.id"/>
           </el-select>
         </el-form-item>
         <el-form-item prop="date">
-          <el-date-picker
-              v-model="event.date"
-              type="date"
-              placeholder="Pick a day"
+          <el-date-picker style="width: 200px"
+                          v-model="event.date"
+                          type="date"
+                          placeholder="Pick a day"
           />
         </el-form-item>
         <el-form-item prop="time">
-          <el-time-select
-              v-model="event.time"
-              start="06:00"
-              step="00:30"
-              end="21:00"
-              placeholder="Select time"
+          <el-time-select style="width: 200px"
+                          v-model="event.time"
+                          start="06:00"
+                          step="00:30"
+                          end="21:00"
+                          placeholder="Select time"
           />
         </el-form-item>
         <el-form-item prop="location">
@@ -32,6 +32,11 @@
         </el-form-item>
         <el-form-item prop="description">
           <el-input v-model="event.description" placeholder="Brief Description"/>
+        </el-form-item>
+        <el-form-item prop="capacity">
+          <el-select style="width: 200px" v-model="event.capacity" placeholder="Estimated Capacity" clearable label="Capacity">
+            <el-option v-for="item in rules.capacity_options" :label="item" :value="item"/>
+          </el-select>
         </el-form-item>
         <el-form-item>
           <el-button type="primary" style="width: 100%" @click="submit">Submit</el-button>
@@ -54,7 +59,8 @@ const rules = reactive({
   name: [
     {required: true, message: 'Please enter name', trigger: 'blur'}
   ],
-  sport_options: []
+  sport_options: [],
+  capacity_options: [2, 3, 5, 10, 20, 30, 50, 70, 100, 200, 500]
 })
 
 const state = reactive({})
@@ -66,12 +72,13 @@ request.get('/sport').then(res => {
 const event = reactive({
   name: "",
   createrid: localStorage.getItem("userid"),
-  date:"",
-  time:"",
+  date: "",
+  time: "",
   location: "",
   description: "",
   participantid: localStorage.getItem("userid"),
-  sportid: ""
+  sportid: "",
+  capacity: ""
 })
 
 
