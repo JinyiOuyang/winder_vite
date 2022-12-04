@@ -15,19 +15,13 @@
 <script>
 import Header from "./Header.vue";
 
+const setLink = (link) => {
+  localStorage.setItem('link', link)
+}
 export default {
   name: "HeaderNavigator",
   components: {Header},
-  methods: {
-    setLink(link) {
-      localStorage.setItem('link', link)
-      console.log(localStorage.getItem("link"))
-      console.log(window.location.href)
-      // window.location.reload()
 
-
-    }
-  }
 }
 
 </script>
@@ -35,6 +29,10 @@ export default {
 <script setup>
 import {reactive, ref} from "vue";
 const user = ref(localStorage.getItem("userid"))
+
+const setLink = (link) => {
+  localStorage.setItem('link', link)
+}
 </script>
 
 
