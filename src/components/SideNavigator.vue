@@ -6,7 +6,7 @@
 <!--          <el-icon><house /></el-icon>Home-->
 <!--        </template>-->
 <!--      </el-menu-item>-->
-      <el-sub-menu index="2" v-if="this.link =='partner'">
+      <el-sub-menu index="2" v-if="link =='partner'">
         <template #title>
           <el-icon><message /></el-icon>Mate
         </template>
@@ -15,7 +15,7 @@
           <el-menu-item index="/likeyou">Like You</el-menu-item>
           <el-menu-item index="/yourmate">Your mate</el-menu-item>
       </el-sub-menu>
-      <el-sub-menu index="3" v-if="this.link =='event'">
+      <el-sub-menu index="3" v-if="link =='event'">
         <template #title>
           <el-icon><icon-menu /></el-icon>Event
         </template>
@@ -27,7 +27,7 @@
           <el-menu-item index="/youreventjoined">Joined Event</el-menu-item>
         </el-sub-menu>
       </el-sub-menu>
-      <el-sub-menu index="4" v-if="this.link =='account'">
+      <el-sub-menu index="4" v-if="link =='account'">
         <template #title>
           <el-icon><setting /></el-icon>Account
         </template>
@@ -42,6 +42,8 @@
 
 <script setup>
 import { Menu as IconMenu, Message, Setting, House } from '@element-plus/icons-vue'
+import {reactive, ref} from "vue";
+const link = ref(localStorage.getItem("link"))
 </script>
 
 <script>
